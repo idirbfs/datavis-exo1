@@ -46,8 +46,11 @@
           <hr class="my-2" />
 
           <div class="card-body">
-            <h5 class="card-title">Jeux vidéos en réseau : Top 50 des jeux vidéos les plus vendus entre 1984 et 2014            </h5>
-            <h6 class="card-subtitle mb-2 text-muted">Force Directed Tree            </h6>
+            <h5 class="card-title">
+              Jeux vidéos en réseau : Top 50 des jeux vidéos les plus vendus
+              entre 1984 et 2014
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Force Directed Tree</h6>
             <img class="card-img" src="map.png" alt="map.svg" />
 
             <ul class="list-group list-group-flush">
@@ -55,10 +58,11 @@
               <li class="list-group-item">
                 <h5 class="card-title">Explication</h5>
                 <p class="card-text">
-                  Description : Cette visualisation met en réseau les 50 jeux les plus vendus par année, en intégrant leur genre. 
-Légende : Date > Genre > Titre du jeu
-Type de visualisation : Qualitatif, catégoriel 
-Jeu de données : Kaggle, Video Game Sales, 
+                  Description : Cette visualisation met en réseau les 50 jeux
+                  les plus vendus par année, en intégrant leur genre. Légende :
+                  Date > Genre > Titre du jeu Type de visualisation :
+                  Qualitatif, catégoriel Jeu de données : Kaggle, Video Game
+                  Sales,
                 </p>
               </li>
             </ul>
@@ -85,21 +89,45 @@ Jeu de données : Kaggle, Video Game Sales,
           </div>
           <hr class="my-4" />
           <div class="card-body">
-            <h5 class="card-title">Visu 1</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <h5 class="card-title">Score critique vs score utilisateur</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Bar Chart</h6>
             <img class="card-img" src="map.png" alt="map.svg" />
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
-              <li class="list-group-item">
-                <h5 class="card-title">Explication</h5>
+              <div>
+                <h5 class="card-title">Description</h5>
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Explicabo aliquam pariatur ab! Culpa ipsa expedita laudantium,
-                  iure dolores deleniti nemo quaerat delectus aut! Et aperiam
-                  delectus consequuntur possimus ratione dolorum.
+                  Comparaison entre le score critique et le score attribué par
+                  les joueurs par jeux
                 </p>
-              </li>
+                <p class="card-text">
+                  <strong>Type de visualisation :</strong> Quantitatif,
+                  catégoriel
+                  <br />
+                  <strong>Jeu de données :</strong> Kaggle, Video Game Sales
+                  Data 13,000 jeux sortis entre 1977 et 2020, provenant de la
+                  base de données
+                </p>
+                <p class="card-text">
+                  <strong>Méthodologie :</strong>
+                  <br />
+                  - Nettoyage des données
+                  <br />
+                  - Filtrage : name, critique score et user score : diagramme à
+                  barre
+                  <br />
+                  - Génération de la visualisation via Rstudio
+                </p>
+                <p class="card-text">
+                  <strong>Observations :</strong>
+                  <br />
+                  Pattern 1 : le user score est généralement inférieur au
+                  critique score. On peut noter un écart significatif pour les
+                  jeux FIFA18, FIFA19 et FIFA20 ainsi que Madden 18, Madden 19,
+                  Madden 20 ou encore Mortal Combat 11 …
+                </p>
+              </div>
             </ul>
           </div>
         </div>
