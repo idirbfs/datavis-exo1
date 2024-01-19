@@ -1,0 +1,26 @@
+{
+    "id": "45EAD095",
+    "path": "~/GitHub/datavis-project/RStudio/score.R",
+    "project_path": "score.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1705606890230.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "7,18",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1705616584,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1705616584164,
+    "read_only": false,
+    "read_only_alternatives": []
+}

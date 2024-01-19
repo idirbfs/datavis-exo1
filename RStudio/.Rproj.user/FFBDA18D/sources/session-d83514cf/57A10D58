@@ -1,0 +1,26 @@
+{
+    "id": "57A10D58",
+    "path": "~/GitHub/datavis-project/RStudio/total_games_by_platform.R",
+    "project_path": "total_games_by_platform.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1705606926224.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "8,18",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1705616591,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1705616591959,
+    "read_only": false,
+    "read_only_alternatives": []
+}

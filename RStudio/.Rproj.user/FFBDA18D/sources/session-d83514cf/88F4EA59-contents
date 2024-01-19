@@ -1,0 +1,211 @@
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# Supprimer les lignes avec des valeurs manquantes
+data <- na.omit(data)
+View(data)
+# Convertir la colonne "User_Score" en numérique
+data$User_Score <- as.numeric(as.character(data$User_Score))
+# Charger les packages nécessaires
+library(ggplot2)
+library(dplyr)
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# Nettoyage des données
+data <- na.omit(data)
+data$Year <- as.Date(data$Year, format = "%Y")
+data$User_Score <- as.numeric(as.character(data$User_Score))
+# Créer un nouveau dataframe avec la somme totale de jeux par éditeur et année
+data_jeuxAnnee <- data %>%
+group_by(Year, Publisher) %>%
+summarise(Total_Games = n())
+# Créer le graphique à barres
+ggplot(data_sum, aes(x = Year, y = Total_Games, fill = Publisher)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Somme totale des jeux publiés par éditeur selon l'année",
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+View(data_jeuxAnnee)
+rm(data_jeuxAnnee)
+# Charger les packages nécessaires
+library(ggplot2)
+library(dplyr)
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# Nettoyage des données
+data <- na.omit(data)
+data$Year <- as.numeric(data$Year)  # Convertir l'année en numérique
+# Créer un nouveau dataframe avec la somme totale de jeux par éditeur et année
+data_sum <- data %>%
+group_by(Year, Publisher) %>%
+summarise(Total_Games = n())
+# Créer le graphique à barres
+ggplot(data_sum, aes(x = as.factor(Year), y = Total_Games, fill = Publisher)) +
+geom_bar(stat = "identity", position = "stack") +
+labs(title = "Somme totale des jeux publiés par éditeur selon l'année",
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+View(data_sum)
+shiny::runApp()
+runApp('platform.R')
+runApp()
+runApp()
+# Lancer le rendu du document R Markdown
+rmarkdown::render("app_platform.Rmd", output_file = "app_platform.html", runtime = "shiny")
+---
+title: "Visualisation de la plateforme de jeux"
+gc()
+gc()
+gc()
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+save_html(shinyApp(ui, server), file = "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio/www/index.html")
+View(app)
+source("~/GitHub/datavis-project/RStudio/year.R")
+install.packages("shinydashboard")
+source("~/GitHub/datavis-project/RStudio/year.R")
+source('year.R')
+gc()
+source("~/GitHub/datavis-project/RStudio/year.R")
+source("~/GitHub/datavis-project/RStudio/year.R")
+runApp('year.R')
+source("~/GitHub/datavis-project/RStudio/year.R")
+source("~/GitHub/datavis-project/RStudio/year.R")
+source('year.R')
+source("~/GitHub/datavis-project/RStudio/year.R")
+source("~/GitHub/datavis-project/RStudio/year.R")
+library(shiny)
+library(shinydashboard)
+library(ggplot2)
+library(dplyr)
+library(DT)
+# Charger les données depuis le fichier CSV
+data <- read.csv("games.csv")
+# Interface utilisateur
+ui <- dashboardPage(
+dashboardHeader(title = "Tableau de bord Shiny"),
+dashboardSidebar(
+selectInput("publisher", "Sélectionnez un éditeur:", choices = unique(data$Publisher))
+),
+dashboardBody(
+DTOutput("table"),
+plotOutput("bar_chart")
+)
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Créer l'application Shiny
+shiny_app <- shinyApp(ui = ui, server = server)
+# Sauvegarder l'application Shiny dans un fichier HTML
+saveApp(shiny_app, "C:\Users\rayan\OneDrive\Documents\GitHub\datavis-project\RStudio\shiny_app_directory")
+source("~/GitHub/datavis-project/RStudio/year.R")
+source("~/GitHub/datavis-project/RStudio/year.R")
+source("~/GitHub/datavis-project/RStudio/year.R")
+source("~/GitHub/datavis-project/RStudio/year.R")
+runApp('year.R')
+runApp('platform.R')
+source("~/GitHub/datavis-project/RStudio/year.R")
+runApp('year.R')
+source("~/GitHub/datavis-project/RStudio/year.R")
+runApp('year.R')
+runApp('platform.R')
+runApp()
+runApp('year.R')
+View(data_cleaned)
+runApp('score.R')
+runApp('score.R')
+runApp('score.R')
+runApp('score.R')
+View(data_platform)
+View(data_platform)
+View(data_cleaned)
+View(data_cleaned)
+runApp('score.R')
+runApp('score.R')
+runApp('score.R')
+runApp('score.R')
+runApp('year.R')
+runApp('score.R')
+runApp('platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+runApp('total_games_by_platform.R')
+View(data_cleaned)
+View(data_cleaned)
+runApp('games_publisher.R')
+runApp('games_publisher.R')
+runApp('games_publisher.R')
+runApp('games_publisher.R')
+runApp('games_publisher.R')
+runApp('games_publisher.R')
