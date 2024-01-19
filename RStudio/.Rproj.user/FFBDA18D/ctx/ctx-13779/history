@@ -1,0 +1,512 @@
+})
+}
+# Lancer l'application Shiny pour la plateforme
+shinyApp(ui = ui_platform, server = server_platform)
+shiny::shinyAppDir(".", options = list(port = 8888, launch.browser = FALSE))
+shiny::shinyAppDir(".", options = list(port = 8888, launch.browser = FALSE))
+runApp()
+runApp()
+runApp()
+install.packages("plotly")
+install.packages("plotly")
+library(shiny); runApp('platform.R')
+runApp('year.R')
+# Créer l'application Shiny autonome
+shinyAppDir(
+system.file("platform.R"),
+options = list(
+width = 800,
+height = 600
+)
+)
+runApp('year.R')
+library(shiny)
+# Charger le code Shiny pour l'année depuis le fichier year.R
+source("year.R")
+# Créer l'application Shiny autonome
+shinyAppDir(
+system.file("year.R"),
+options = list(
+width = 800,
+height = 600
+)
+)
+runApp('gHtml.R')
+source('year.R')
+source('year.R')
+source('year.R')
+source('year.R')
+source("~/GitHub/datavis-project/RStudio/year.R")
+# Charger les données depuis le fichier CSV
+data <- read.csv("games.csv")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+shinyApp(ui, server)
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+shinyApp(ui, server)
+source('year.R')
+source('year.R')
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+shiny::saveApp(app, "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio/www")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+shiny::shinyAppDir(app, "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio/www")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+shiny::shinyAppDir(app, "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio/www")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+shiny::shinyAppDir(app, "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio/www")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+shiny::shinyAppDir(app, "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+shiny::shinyAppDir(app, "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio/www")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+shiny::shinyAppDir(app, "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+shiny::shinyAppDir(app, "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio")
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(DT)  # Pour la table interactive
+# Charger les données depuis le fichier CSV
+data <- read.csv("D:/M2-THYP-P8/DataVis/Games/games.csv")
+# UI (Interface Utilisateur)
+ui <- fluidPage(
+titlePanel("Somme totale des jeux publiés par éditeur selon l'année"),
+# Sélectionner un éditeur
+selectInput("publisher", "Sélectionnez un éditeur:",
+choices = unique(data$Publisher)),
+# Afficher la table des données
+DTOutput("table"),
+# Afficher le graphique à barres
+plotOutput("bar_chart")
+)
+# Serveur
+server <- function(input, output) {
+# Filtrer les données en fonction de l'éditeur sélectionné
+filtered_data <- reactive({
+data %>%
+filter(Publisher == input$publisher)
+})
+# Afficher la table interactive
+output$table <- renderDT({
+datatable(filtered_data(), options = list(pageLength = 5))
+})
+# Créer le graphique à barres
+output$bar_chart <- renderPlot({
+ggplot(filtered_data(), aes(x = as.factor(Year), fill = Publisher)) +
+geom_bar(stat = "count") +
+labs(title = paste("Nombre de jeux publiés par", input$publisher, "par année"),
+x = "Année",
+y = "Nombre total de jeux") +
+theme_minimal() +
+theme(legend.position = "top", legend.title = element_blank())
+})
+}
+# Lancer l'application
+app <- shinyApp(ui, server)
+# Enregistrez l'application Shiny dans un fichier HTML dans le répertoire du projet
+save_html(shinyApp(ui, server), file = "C:/Users/rayan/OneDrive/Documents/GitHub/datavis-project/RStudio/www/index.html")
