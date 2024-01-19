@@ -46,11 +46,8 @@
           <hr class="my-2" />
 
           <div class="card-body">
-            <h5 class="card-title">
-              Jeux vidéos en réseau : Top 50 des jeux vidéos les plus vendus
-              entre 1984 et 2014
-            </h5>
-            <h6 class="card-subtitle mb-2 text-muted">Force Directed Tree</h6>
+            <h5 class="card-title">Jeux vidéos en réseau : Top 50 des jeux vidéos les plus vendus entre 1984 et 2014            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Force Directed Tree            </h6>
             <img class="card-img" src="map.png" alt="map.svg" />
 
             <ul class="list-group list-group-flush">
@@ -58,11 +55,10 @@
               <li class="list-group-item">
                 <h5 class="card-title">Explication</h5>
                 <p class="card-text">
-                  Description : Cette visualisation met en réseau les 50 jeux
-                  les plus vendus par année, en intégrant leur genre. Légende :
-                  Date > Genre > Titre du jeu Type de visualisation :
-                  Qualitatif, catégoriel Jeu de données : Kaggle, Video Game
-                  Sales,
+                  Description : Cette visualisation met en réseau les 50 jeux les plus vendus par année, en intégrant leur genre. 
+Légende : Date > Genre > Titre du jeu
+Type de visualisation : Qualitatif, catégoriel 
+Jeu de données : Kaggle, Video Game Sales, 
                 </p>
               </li>
             </ul>
@@ -70,19 +66,49 @@
           <hr class="my-4" />
 
           <div class="card-body">
-            <h5 class="card-title">Visu 1</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <img class="card-img" src="map.png" alt="map.svg" />
+            <h5 class="card-title">Le marché du jeu vidéo</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Bar Chart            </h6>
+            <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSwR5QgmEcYSVZToKqmSBK-UfG88V1Qkw1V-_N8XJujmFKEuHqJLNiS14XTFbhWYUqlq1Gc4Kpsj31n/pubchart?oid=181423583&amp;format=interactive"></iframe>
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
               <li class="list-group-item">
                 <h5 class="card-title">Explication</h5>
+                <h5 class="card-title">Fréquence des sorties par éditeurs par année</h5>
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Explicabo aliquam pariatur ab! Culpa ipsa expedita laudantium,
-                  iure dolores deleniti nemo quaerat delectus aut! Et aperiam
-                  delectus consequuntur possimus ratione dolorum.
+                    <strong>Description :</strong> Cette visualisation présente la fréquence des sorties de jeux par éditeurs par année.
+                    <br>
+                    <strong>Légende :</strong> 
+                    <ul>
+                        <li>Tableau de données : Pays > Nombre de développeurs de jeux vidéos</li>
+                        <li>Map interactive : Nombre de développeurs de jeux vidéos par pays</li>
+                    </ul>
+                    <strong>Type de visualisation :</strong> Géographique/Quantitative
+                    <br>
+                    <strong>Jeu de données :</strong> Wikidata
+                    <br>
+                    <strong>URL Querry :</strong> <a href="https://w.wiki/8thD" target="_blank">https://w.wiki/8thD</a>
+                    <br>
+                    <strong>URL Résultat :</strong> <a href="https://w.wiki/8thD" target="_blank">https://w.wiki/8thD</a>
+                    <br>
+                    <strong>Méthodologie :</strong>
+                    <ol>
+                        <li>Importation et Nettoyage des données sur Google Sheets</li>
+                        <li>Filtrage des colonnes sur Google Sheets</li>
+                        <ul>
+                            <li>Tri des répétitions des pays avec la formule “=UNIQUE(B2:B965)”</li>
+                            <li>Comptage du nombre de répétitions avec la formule “=COUNTIF(B2:B965, E2)” (si cela n’a pas marché, comptage manuel)</li>
+                        </ul>
+                        <li>Génération de la visualisation via Google Sheets</li>
+                    </ol>
+                    <strong>Observations :</strong> 
+                    <ul>
+                        <li>Les États-Unis dominent largement l'industrie du jeu vidéo avec 247 studios de développement.</li>
+                        <li>L'Europe est bien représentée, en particulier l'Allemagne, la France, et la Lettonie.</li>
+                        <li>L'Asie contribue significativement, avec la Chine, le Japon, et la Corée du Sud.</li>
+                        <li>Certains pays ont une présence limitée ou nulle.</li>
+                        <li>Globalement, l'industrie du jeu vidéo montre une diversité mondiale avec une tendance à la croissance.</li>
+                    </ul>
                 </p>
               </li>
             </ul>
