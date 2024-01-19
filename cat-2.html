@@ -42,11 +42,11 @@
           </ul>
         </div>
         <div class="card col-md-10">
-          <h2 class="text-center py-3 text-dark">Dimension marco</h2>
+          <h2 class="text-center py-3 text-dark">Dimension macro</h2>
           <hr class="my-2" />
 
           <div class="card-body">
-            <h5 class="card-title">Jeux vidéos en réseau : Top 50 des jeux vidéos les plus vendus entre 1984 et 2014            </h5>
+            <h5 class="card-title">Video Games Years Review (2000 - 2020)          </h5>
             <h6 class="card-subtitle mb-2 text-muted">Force Directed Tree            </h6>
             <iframe width="100%" height="500" frameborder="0"
             src="https://observablehq.com/embed/bc695cc8ca4e5009?cell=*"></iframe> 
@@ -86,14 +86,13 @@
           <hr class="my-4" />
 
           <div class="card-body">
-            <h5 class="card-title">Nombre d’éditeurs de jeux vidéo par pays, </h5>
+            <h5 class="card-title">Nombre d’éditeurs de jeux vidéo par pays</h5>
             <h6 class="card-subtitle mb-2 text-muted">Interactive map,          </h6>
             <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSwR5QgmEcYSVZToKqmSBK-UfG88V1Qkw1V-_N8XJujmFKEuHqJLNiS14XTFbhWYUqlq1Gc4Kpsj31n/pubchart?oid=181423583&amp;format=interactive"></iframe>
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
               <li class="list-group-item">
-                <h5 class="card-title">Explication</h5>
                 <h5 class="card-title">Fréquence des sorties par éditeurs par année</h5>
                 <p class="card-text">
                     <strong>Description :</strong> Cette visualisation présente la fréquence des sorties de jeux par éditeurs par année.
@@ -169,7 +168,7 @@
           
           <hr class="my-4" />
           <div class="card-body">
-            <h5 class="card-title"> combien de jeux vidéos avez-vous sortis cette année-là ?           </h5>
+            <h5 class="card-title"> Combien de jeux vidéos avez-vous sortis cette année-là ?           </h5>
             <h6 class="card-subtitle mb-2 text-muted">Dashboard/Bar Chart            </h6>
             <img class="card-img" src="barflaire.webp" alt="map.svg" />
 
@@ -178,39 +177,24 @@
               <li class="list-group-item">
                 <h5 class="card-title">Fréquence des sorties par éditeurs par année</h5>
                 <p class="card-text">
-                    <strong>Description :</strong> Cette visualisation présente la fréquence des sorties de jeux par éditeurs par année.
+                    <strong>Description :</strong> Cette visualisation analyse la fréquence des sorties de jeux par éditeurs chaque année.
                     <br>
-                    <strong>Légende :</strong> 
-                    <ul>
-                        <li>Tableau de données : Pays > Nombre de développeurs de jeux vidéos</li>
-                        <li>Map interactive : Nombre de développeurs de jeux vidéos par pays</li>
-                    </ul>
-                    <strong>Type de visualisation :</strong> Géographique/Quantitative
+                    <strong>Légende :</strong> Tableau de données : Name > Plateform > Publisher > Developpeur > Critique_Score > User_Score > Total_Shipped > Year
                     <br>
-                    <strong>Jeu de données :</strong> Wikidata
+                    <strong>Graphique à barres :</strong> Nombre total de jeux par éditeurs par année
                     <br>
-                    <strong>URL Querry :</strong> <a href="https://w.wiki/8thD" target="_blank">https://w.wiki/8thD</a>
+                    <strong>Type de visualisation :</strong> Quantitatif, catégoriel et temporel
                     <br>
-                    <strong>URL Résultat :</strong> <a href="https://w.wiki/8thD" target="_blank">https://w.wiki/8thD</a>
+                    <strong>Jeu de données :</strong> Kaggle, Video Game Sales Data, <a href="https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1" target="_blank">https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1</a>, 13,000 jeux sortis entre 1977 et 2020, provenant de la base de données VGChartz
                     <br>
                     <strong>Méthodologie :</strong>
                     <ol>
-                        <li>Importation et Nettoyage des données sur Google Sheets</li>
-                        <li>Filtrage des colonnes sur Google Sheets</li>
-                        <ul>
-                            <li>Tri des répétitions des pays avec la formule “=UNIQUE(B2:B965)”</li>
-                            <li>Comptage du nombre de répétitions avec la formule “=COUNTIF(B2:B965, E2)” (si cela n’a pas marché, comptage manuel)</li>
-                        </ul>
-                        <li>Génération de la visualisation via Google Sheets</li>
+                        <li>Nettoyage des données</li>
+                        <li>Filtrage : name (somme des jeux par éditeurs), année et somme des jeux</li>
+                        <li>Génération de la visualisation via Rstudio</li>
                     </ol>
                     <strong>Observations :</strong> 
-                    <ul>
-                        <li>Les États-Unis dominent largement l'industrie du jeu vidéo avec 247 studios de développement.</li>
-                        <li>L'Europe est bien représentée, en particulier l'Allemagne, la France, et la Lettonie.</li>
-                        <li>L'Asie contribue significativement, avec la Chine, le Japon, et la Corée du Sud.</li>
-                        <li>Certains pays ont une présence limitée ou nulle.</li>
-                        <li>Globalement, l'industrie du jeu vidéo montre une diversité mondiale avec une tendance à la croissance.</li>
-                    </ul>
+                    <p>Il n’y a pas de tendances, les données varient selon les éditeurs. Certains éditeurs comme SEGA sortent moins de 3 jeux par an, alors que Nintendo en sort en moyenne 5 par an.</p>
                 </p> </li>
             </ul>
           </div>
@@ -223,30 +207,58 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
               <li class="list-group-item">
-                <h5 class="card-title">Nombre sur quoi ?, Dashboard/Bar Chart</h5>
+                <h5 class="card-title">Comparaison entre le score critique et le score attribué par les joueurs par jeux</h5>
                 <p class="card-text">
-                    <strong>Description :</strong> Cette visualisation représente le nombre total de jeux sortis par plateforme selon l’année.
+                    <strong>Description :</strong> Cette visualisation compare le score critique et le score attribué par les joueurs pour chaque jeu.
                     <br>
-                    <strong>Légende :</strong> 
-                    <ul>
-                        <li>Tableau de données : Name > Plateform > Publisher > Développeur > Critique_Score > User_Score > Total_Shipped > Year</li>
-                        <li>Graphique à barres : Nombre total de jeux par plateforme par année</li>
-                    </ul>
-                    <strong>Type de visualisation :</strong> Quantitatif, catégoriel et temporel
+                    <strong>Légende :</strong> Score : Critique Score ; User Score > Nom du jeu
+                    <br>
+                    <strong>Type de visualisation :</strong> Quantitatif, catégoriel
                     <br>
                     <strong>Jeu de données :</strong> Kaggle, Video Game Sales Data, <a href="https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1" target="_blank">https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1</a>, 13,000 jeux sortis entre 1977 et 2020, provenant de la base de données VGChartz
                     <br>
                     <strong>Méthodologie :</strong>
                     <ol>
                         <li>Nettoyage des données</li>
-                        <li>Filtrage : somme des jeux par plateforme, année et somme des jeux</li>
+                        <li>Filtrage : name, critique score et user score : Diagramme à barres</li>
                         <li>Génération de la visualisation via Rstudio</li>
                     </ol>
                     <strong>Observations :</strong> 
-                    <p>Sur certaines plateformes, les jeux sortent en continu, tandis que pour d’autres, les sorties s’arrêtent, comme par exemple NES.</p>
+                    <p>Pattern 1 : Le user score est généralement inférieur au critique score. On peut noter un écart significatif pour les jeux FIFA18, FIFA19 et FIFA20 ainsi que Madden 18, Madden 19, Madden 20 ou encore Mortal Combat 11.</p>
                 </p></li>
             </ul>
           </div>
+          <hr class="my-4" />
+          <div class="card-body">
+            <h5 class="card-title">Score critique vs score utilisateur : quelle différence ?            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Bar Chart            </h6>
+            <img class="card-img" src="history.webp" alt="map.svg" />
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"></li>
+              <li class="list-group-item">
+                <h5 class="card-title">Historique de la création des jeux vidéos par éditeurs par année</h5>
+                <p class="card-text">
+                    <strong>Description :</strong> Cette visualisation présente l'historique de la création des jeux vidéos par éditeurs par année.
+                    <br>
+                    <strong>Légende :</strong> Nombre total de jeux > Année > Éditeurs
+                    <br>
+                    <strong>Type de visualisation :</strong> Quantitatif, catégoriel, temporel
+                    <br>
+                    <strong>Jeu de données :</strong> Kaggle, Video Game Sales Data, <a href="https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1" target="_blank">https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1</a>, 13,000 jeux sortis entre 1977 et 2020, provenant de la base de données VGChartz
+                    <br>
+                    <strong>Méthodologie :</strong>
+                    <ol>
+                        <li>Nettoyage des données</li>
+                        <li>Filtrage : Somme totale des jeux par année par éditeurs</li>
+                        <li>Génération de la visualisation via Rstudio</li>
+                    </ol>
+                    <strong>Observations :</strong> 
+                    <p>Entre 1985 et les années 2000, on observe un monopole de Nintendo. À partir des années 2000, d’autres éditeurs comme Sony et Microsoft émergent. À partir de 2007, on observe une croissance importante du nombre de jeux vidéos créés pour atteindre un pic dans les années 2015 avec 17 éditeurs présents sur le marché. À partir de 2019, on a une forte décroissance, sans doute liée à la pandémie. Globalement, on observe que Nintendo reste leader du marché.</p>
+                </p></li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
