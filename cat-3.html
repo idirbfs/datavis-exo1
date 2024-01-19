@@ -43,62 +43,38 @@
         </div>
         <div class="card col-md-10">
           <h2 class="text-center py-3 text-dark">Dimension micro</h2>
-          <hr class="my-2" />
-
-          <div class="card-body">
-            <h5 class="card-title">Visu 1</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <img class="card-img" src="map.png" alt="map.svg" />
-
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"></li>
-              <li class="list-group-item">
-                <h5 class="card-title">Explication</h5>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Explicabo aliquam pariatur ab! Culpa ipsa expedita laudantium,
-                  iure dolores deleniti nemo quaerat delectus aut! Et aperiam
-                  delectus consequuntur possimus ratione dolorum.
-                </p>
-              </li>
-            </ul>
-          </div>
+          
           <hr class="my-4" />
 
           <div class="card-body">
-            <h5 class="card-title">Visu 1</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <img class="card-img" src="map.png" alt="map.svg" />
-
+            <h5 class="card-title">Jeux vidéos en réseau : Top 50 des jeux vidéos les plus vendus entre 1984 et 2014/h5>
+            <h6 class="card-subtitle mb-2 text-muted">Force Directed Tree</h6>
+            <iframe width="100%" height="500" frameborder="0"
+            src="https://observablehq.com/embed/de9fab44e0f7cb8c?cell=*"></iframe> 
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
               <li class="list-group-item">
                 <h5 class="card-title">Explication</h5>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Explicabo aliquam pariatur ab! Culpa ipsa expedita laudantium,
-                  iure dolores deleniti nemo quaerat delectus aut! Et aperiam
-                  delectus consequuntur possimus ratione dolorum.
-                </p>
-              </li>
-            </ul>
-          </div>
-          <hr class="my-4" />
-          <div class="card-body">
-            <h5 class="card-title">Visu 1</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <img class="card-img" src="map.png" alt="map.svg" />
-
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item"></li>
-              <li class="list-group-item">
-                <h5 class="card-title">Explication</h5>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Explicabo aliquam pariatur ab! Culpa ipsa expedita laudantium,
-                  iure dolores deleniti nemo quaerat delectus aut! Et aperiam
-                  delectus consequuntur possimus ratione dolorum.
-                </p>
+    <p class="card-text">
+        <strong>Description :</strong> Cette visualisation met en réseau les 50 jeux les plus vendus par année, en intégrant leur genre.
+        <br>
+        <strong>Légende :</strong> Date > Genre > Titre du jeu
+        <br>
+        <strong>Type de visualisation :</strong> Qualitatif, catégoriel 
+        <br>
+        <strong>Jeu de données :</strong> Kaggle, Video Game Sales, <a href="https://www.kaggle.com/datasets/benvarghese/video-game-sales" target="_blank">https://www.kaggle.com/datasets/benvarghese/video-game-sales</a>, 200 lignes, Name, Year, Genre
+        <br>
+        <strong>Méthodologie :</strong>
+        <ol>
+            <li>Filtrer le jeu de données selon les éléments souhaités : Date, Genre, Titre</li>
+            <li>Importer le fichier .CSV sur Rawgraphs old</li>
+            <li>Création de la hiérarchie du modèle “Cluster Dendogram”</li>
+            <li>Export au format .JSON</li>
+            <li>Fork et personnalisation du modèle “Force-Directed Tree” sur Observable</li>
+        </ol>
+        <strong>Observations :</strong> 
+        <p>Avant les années 2000, les jeux les plus vendus sont principalement des jeux de type “plateforme”.</p>
+    </p>
               </li>
             </ul>
           </div>

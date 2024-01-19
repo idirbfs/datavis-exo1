@@ -48,26 +48,46 @@
           <div class="card-body">
             <h5 class="card-title">Jeux vidéos en réseau : Top 50 des jeux vidéos les plus vendus entre 1984 et 2014            </h5>
             <h6 class="card-subtitle mb-2 text-muted">Force Directed Tree            </h6>
-            <img class="card-img" src="map.png" alt="map.svg" />
+            <iframe width="100%" height="500" frameborder="0"
+            src="https://observablehq.com/embed/bc695cc8ca4e5009?cell=*"></iframe> 
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
               <li class="list-group-item">
-                <h5 class="card-title">Explication</h5>
-                <p class="card-text">
-                  Description : Cette visualisation met en réseau les 50 jeux les plus vendus par année, en intégrant leur genre. 
-Légende : Date > Genre > Titre du jeu
-Type de visualisation : Qualitatif, catégoriel 
-Jeu de données : Kaggle, Video Game Sales, 
-                </p>
+                <div>
+                  <h5 class="card-title">Catégorisation des jeux sortis par années</h5>
+                  <p class="card-text">
+                      <strong>Description :</strong> Cette visualisation représente la catégorisation des jeux sortis par années.
+                      <br>
+                      <strong>Légende :</strong> Année > Titre du jeu > Note critique
+                      <br>
+                      <strong>Type de visualisation :</strong> Quantitatif (massif), catégoriel
+                      <br>
+                      <strong>Jeu de données :</strong>
+                      <ul>
+                          <li>Initial : Kaggle, Video Game Sales Data, <a href="https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1" target="_blank">https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1</a></li>
+                          <li>Tranche d’années filtrée : 2000 à 2020</li>
+                      </ul>
+                      <strong>Méthodologie :</strong>
+                      <ol>
+                          <li>Sur Google Sheets, filtrer le jeu de données selon les éléments souhaités : Year, Name, Critic_Score</li>
+                          <li>Filtrer l’affichage par année, ordre croissant</li>
+                          <li>Importer le fichier .CSV sur Rawgraphs old</li>
+                          <li>Création de la hiérarchie du modèle “Cluster Dendrogram”</li>
+                          <li>Export au format .JSON</li>
+                          <li>Fork et personnalisation du modèle “Collapsible Cluster Dendrogram” sur Observable</li>
+                      </ol>
+                      <strong>Observations :</strong> Une énorme quantité de données (titres de jeux), notamment entre les années 2006 et 2011.
+                  </p>
+              </div>
               </li>
             </ul>
           </div>
           <hr class="my-4" />
 
           <div class="card-body">
-            <h5 class="card-title">Le marché du jeu vidéo</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Bar Chart            </h6>
+            <h5 class="card-title">Nombre d’éditeurs de jeux vidéo par pays, </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Interactive map,          </h6>
             <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSwR5QgmEcYSVZToKqmSBK-UfG88V1Qkw1V-_N8XJujmFKEuHqJLNiS14XTFbhWYUqlq1Gc4Kpsj31n/pubchart?oid=181423583&amp;format=interactive"></iframe>
 
             <ul class="list-group list-group-flush">
@@ -115,45 +135,116 @@ Jeu de données : Kaggle, Video Game Sales,
           </div>
           <hr class="my-4" />
           <div class="card-body">
-            <h5 class="card-title">Score critique vs score utilisateur</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Bar Chart</h6>
-            <img class="card-img" src="map.png" alt="map.svg" />
+            <h5 class="card-title">Le marché du jeu vidéo            </h5>
+            <h6 class="card-subtitle mb-2 text-muted"> Bar Chart            </h6>
+            <img class="card-img" src="marché de jeu vidéo.webp" alt="map.svg" />
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
-              <div>
-                <h5 class="card-title">Description</h5>
+              <li class="list-group-item">
+                <h5 class="card-title">Vue globale des sorties de jeux par plateforme par année</h5>
                 <p class="card-text">
-                  Comparaison entre le score critique et le score attribué par
-                  les joueurs par jeux
+                    <strong>Description :</strong> Cette visualisation offre une vue globale des sorties de jeux par plateforme par année.
+                    <br>
+                    <strong>Légende :</strong> 
+                    <ul>
+                        <li>Bar Chart : Plateforme > Nombre total de jeux</li>
+                        <li>Line Chart : Plateforme > Nombre total de jeux > Année</li>
+                    </ul>
+                    <strong>Type de visualisation :</strong> Quantitatif, catégoriel et temporel
+                    <br>
+                    <strong>Jeu de données :</strong> Kaggle, Video Game Sales Data, <a href="https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1" target="_blank">https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1</a>, 13,000 jeux sortis entre 1977 et 2020, provenant de la base de données VGChartz
+                    <br>
+                    <strong>Méthodologie :</strong>
+                    <ol>
+                        <li>Nettoyage des données</li>
+                        <li>Filtrage : name (somme des jeux par plateforme), année et somme des jeux</li>
+                        <li>Génération de la visualisation via Rstudio</li>
+                    </ol>
+                    <strong>Observations :</strong> Dans ce jeu de données, la plateforme PS4 a sorti le plus grand nombre de jeux depuis sa création.
                 </p>
+              </li>
+            </ul>
+          </div>
+          
+          <hr class="my-4" />
+          <div class="card-body">
+            <h5 class="card-title"> combien de jeux vidéos avez-vous sortis cette année-là ?           </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Dashboard/Bar Chart            </h6>
+            <img class="card-img" src="barflaire.webp" alt="map.svg" />
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"></li>
+              <li class="list-group-item">
+                <h5 class="card-title">Fréquence des sorties par éditeurs par année</h5>
                 <p class="card-text">
-                  <strong>Type de visualisation :</strong> Quantitatif,
-                  catégoriel
-                  <br />
-                  <strong>Jeu de données :</strong> Kaggle, Video Game Sales
-                  Data 13,000 jeux sortis entre 1977 et 2020, provenant de la
-                  base de données
-                </p>
+                    <strong>Description :</strong> Cette visualisation présente la fréquence des sorties de jeux par éditeurs par année.
+                    <br>
+                    <strong>Légende :</strong> 
+                    <ul>
+                        <li>Tableau de données : Pays > Nombre de développeurs de jeux vidéos</li>
+                        <li>Map interactive : Nombre de développeurs de jeux vidéos par pays</li>
+                    </ul>
+                    <strong>Type de visualisation :</strong> Géographique/Quantitative
+                    <br>
+                    <strong>Jeu de données :</strong> Wikidata
+                    <br>
+                    <strong>URL Querry :</strong> <a href="https://w.wiki/8thD" target="_blank">https://w.wiki/8thD</a>
+                    <br>
+                    <strong>URL Résultat :</strong> <a href="https://w.wiki/8thD" target="_blank">https://w.wiki/8thD</a>
+                    <br>
+                    <strong>Méthodologie :</strong>
+                    <ol>
+                        <li>Importation et Nettoyage des données sur Google Sheets</li>
+                        <li>Filtrage des colonnes sur Google Sheets</li>
+                        <ul>
+                            <li>Tri des répétitions des pays avec la formule “=UNIQUE(B2:B965)”</li>
+                            <li>Comptage du nombre de répétitions avec la formule “=COUNTIF(B2:B965, E2)” (si cela n’a pas marché, comptage manuel)</li>
+                        </ul>
+                        <li>Génération de la visualisation via Google Sheets</li>
+                    </ol>
+                    <strong>Observations :</strong> 
+                    <ul>
+                        <li>Les États-Unis dominent largement l'industrie du jeu vidéo avec 247 studios de développement.</li>
+                        <li>L'Europe est bien représentée, en particulier l'Allemagne, la France, et la Lettonie.</li>
+                        <li>L'Asie contribue significativement, avec la Chine, le Japon, et la Corée du Sud.</li>
+                        <li>Certains pays ont une présence limitée ou nulle.</li>
+                        <li>Globalement, l'industrie du jeu vidéo montre une diversité mondiale avec une tendance à la croissance.</li>
+                    </ul>
+                </p> </li>
+            </ul>
+          </div>
+          <hr class="my-4" />
+          <div class="card-body">
+            <h5 class="card-title">Score critique vs score utilisateur : quelle différence ?            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Bar Chart            </h6>
+            <img class="card-img" src="critikscore.webp" alt="map.svg" />
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"></li>
+              <li class="list-group-item">
+                <h5 class="card-title">Nombre sur quoi ?, Dashboard/Bar Chart</h5>
                 <p class="card-text">
-                  <strong>Méthodologie :</strong>
-                  <br />
-                  - Nettoyage des données
-                  <br />
-                  - Filtrage : name, critique score et user score : diagramme à
-                  barre
-                  <br />
-                  - Génération de la visualisation via Rstudio
-                </p>
-                <p class="card-text">
-                  <strong>Observations :</strong>
-                  <br />
-                  Pattern 1 : le user score est généralement inférieur au
-                  critique score. On peut noter un écart significatif pour les
-                  jeux FIFA18, FIFA19 et FIFA20 ainsi que Madden 18, Madden 19,
-                  Madden 20 ou encore Mortal Combat 11 …
-                </p>
-              </div>
+                    <strong>Description :</strong> Cette visualisation représente le nombre total de jeux sortis par plateforme selon l’année.
+                    <br>
+                    <strong>Légende :</strong> 
+                    <ul>
+                        <li>Tableau de données : Name > Plateform > Publisher > Développeur > Critique_Score > User_Score > Total_Shipped > Year</li>
+                        <li>Graphique à barres : Nombre total de jeux par plateforme par année</li>
+                    </ul>
+                    <strong>Type de visualisation :</strong> Quantitatif, catégoriel et temporel
+                    <br>
+                    <strong>Jeu de données :</strong> Kaggle, Video Game Sales Data, <a href="https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1" target="_blank">https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1</a>, 13,000 jeux sortis entre 1977 et 2020, provenant de la base de données VGChartz
+                    <br>
+                    <strong>Méthodologie :</strong>
+                    <ol>
+                        <li>Nettoyage des données</li>
+                        <li>Filtrage : somme des jeux par plateforme, année et somme des jeux</li>
+                        <li>Génération de la visualisation via Rstudio</li>
+                    </ol>
+                    <strong>Observations :</strong> 
+                    <p>Sur certaines plateformes, les jeux sortent en continu, tandis que pour d’autres, les sorties s’arrêtent, comme par exemple NES.</p>
+                </p></li>
             </ul>
           </div>
         </div>
