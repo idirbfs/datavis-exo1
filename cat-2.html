@@ -48,18 +48,38 @@
           <div class="card-body">
             <h5 class="card-title">Jeux vidéos en réseau : Top 50 des jeux vidéos les plus vendus entre 1984 et 2014            </h5>
             <h6 class="card-subtitle mb-2 text-muted">Force Directed Tree            </h6>
-            <img class="card-img" src="map.png" alt="map.svg" />
+            <iframe width="100%" height="500" frameborder="0"
+            src="https://observablehq.com/embed/bc695cc8ca4e5009?cell=*"></iframe> 
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item"></li>
               <li class="list-group-item">
-                <h5 class="card-title">Explication</h5>
-                <p class="card-text">
-                  Description : Cette visualisation met en réseau les 50 jeux les plus vendus par année, en intégrant leur genre. 
-Légende : Date > Genre > Titre du jeu
-Type de visualisation : Qualitatif, catégoriel 
-Jeu de données : Kaggle, Video Game Sales, 
-                </p>
+                <div>
+                  <h5 class="card-title">Catégorisation des jeux sortis par années</h5>
+                  <p class="card-text">
+                      <strong>Description :</strong> Cette visualisation représente la catégorisation des jeux sortis par années.
+                      <br>
+                      <strong>Légende :</strong> Année > Titre du jeu > Note critique
+                      <br>
+                      <strong>Type de visualisation :</strong> Quantitatif (massif), catégoriel
+                      <br>
+                      <strong>Jeu de données :</strong>
+                      <ul>
+                          <li>Initial : Kaggle, Video Game Sales Data, <a href="https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1" target="_blank">https://www.kaggle.com/datasets/holmjason2/videogamedata?rvi=1</a></li>
+                          <li>Tranche d’années filtrée : 2000 à 2020</li>
+                      </ul>
+                      <strong>Méthodologie :</strong>
+                      <ol>
+                          <li>Sur Google Sheets, filtrer le jeu de données selon les éléments souhaités : Year, Name, Critic_Score</li>
+                          <li>Filtrer l’affichage par année, ordre croissant</li>
+                          <li>Importer le fichier .CSV sur Rawgraphs old</li>
+                          <li>Création de la hiérarchie du modèle “Cluster Dendrogram”</li>
+                          <li>Export au format .JSON</li>
+                          <li>Fork et personnalisation du modèle “Collapsible Cluster Dendrogram” sur Observable</li>
+                      </ol>
+                      <strong>Observations :</strong> Une énorme quantité de données (titres de jeux), notamment entre les années 2006 et 2011.
+                  </p>
+              </div>
               </li>
             </ul>
           </div>
